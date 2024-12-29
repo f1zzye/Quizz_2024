@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HospitalConfig(AppConfig):
+class QuizConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "hospital"
+    name = "quiz"
