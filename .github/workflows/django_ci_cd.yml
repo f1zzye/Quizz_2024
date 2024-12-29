@@ -1,4 +1,4 @@
-name: hospital_CI_CD
+name: quiz_CI_CD
 
 on:
   - push
