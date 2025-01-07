@@ -26,8 +26,8 @@ class QuestionSerializer(ModelSerializer):
 
 
 class QuizSerializer(ModelSerializer):
-    level = CharField(source="get_level_display")
+    level = CharField(source="get_level_display", read_only=True)
 
     class Meta:
         model = Quiz
-        fields = ("id", "title", "description", "level", "questions_count")
+        fields = ("id", "title", "description", "category", "level", "questions_count")
