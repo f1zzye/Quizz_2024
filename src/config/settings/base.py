@@ -14,6 +14,8 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+import mongoengine
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     "core",
     "quiz",
     "api",
+    "blog",
 ]
 
 MIDDLEWARE = [
@@ -84,6 +87,10 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+mongoengine.connect(
+    host="mongodb://admin:admin@mongodb:27017/mongodb_content?authSource=admin",
+)
 
 if os.environ.get("GITHUB_WORKFLOW"):
     DATABASES = {
