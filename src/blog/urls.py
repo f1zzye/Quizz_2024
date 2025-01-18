@@ -1,8 +1,8 @@
 from django.urls import include, path
 
-from blog.views import create_blog, all_blogs
+from blog.views import all_blogs, create_blog
 
-app_name = 'blog'
+app_name = "blog"
 
 urlpatterns = [
     path("create-blog/", create_blog, name="create_blog"),

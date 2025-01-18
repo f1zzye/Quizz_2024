@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from faker import Faker
 
-from blog.models import Entry, Blog
+from blog.models import Blog, Entry
 
 
 def create_blog(request):
@@ -12,6 +12,7 @@ def create_blog(request):
         blog=[Blog(name=faker.word(), text=faker.paragraph(nb_sentences=5), author=faker.name())],
     ).save()
     return HttpResponse(f"Done: {saved}")
+
 
 def all_blogs(request):
     blog_timestamps = list(Entry.objects().values_list("timestamp"))

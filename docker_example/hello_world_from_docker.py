@@ -5,9 +5,9 @@ import pandas as pd
 
 while True:
     df = pd.DataFrame(
-        data = {
-            'timestamp': [datetime.datetime.now(), datetime.datetime.now() + datetime.timedelta(days=7)],
-            'col2': [3, 4]
+        data={
+            "timestamp": [datetime.datetime.now(), datetime.datetime.now() + datetime.timedelta(days=7)],
+            "col2": [3, 4],
         }
     )
     print(df)
